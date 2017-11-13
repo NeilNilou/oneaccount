@@ -14,9 +14,9 @@
       <md-button href="#" class="md-raised md-primary" id="access-btn">Connect to your data</md-button>
       <div class="register">
         <p class="not-register">New here ? Get started now</p>
-        <md-button class="md-icon-button md-raised md-primary" id="register-btn">
+        <router-link to='/setup'><md-button class="md-icon-button md-raised md-primary" id="register-btn">
           <md-icon>account_circle</md-icon>
-        </md-button>
+        </md-button></router-link>
       </div>
   </main>
 </template>
