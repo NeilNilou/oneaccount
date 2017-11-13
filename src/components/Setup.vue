@@ -6,56 +6,78 @@
       <div class="navbar-btn">
         <router-link to='/'><md-button class="router-link-btn">access data</md-button></router-link>
         <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
-        <router-link to='/about'><md-button class="router-link-btn">about us</md-button></router-link>
+        <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
       </div>
     </md-toolbar>
 
     <md-card class="card-setup">
       <md-card-header>
-        <div class="md-title">Create a new identity</div>
+        <div class="md-title">Create a new personal data card</div>
       </md-card-header>
 
       <md-card-content class="card-content">
         <form novalidate @submit.stop.prevent="submit">
-          <md-input-container class="md-input-invalid" md-clearable>
+
+          <md-input-container :class="{'md-input-invalid': errors.has('firstname')}" md-clearable>
             <md-icon>account_box</md-icon>
             <label>First name</label>
-              <md-input placeholder="Enter your first name" required></md-input>
-              <span class="md-error">The name you entered is not valid</span>
+              <md-input :class="{ 'has-error': errors.has('firstname'), 'form-group': true }" placeholder="Enter your first name" type="text" v-validate data-vv-rules="required|alpha" v-model="form.firstname" class="form-control" name="firstname" required autofocus></md-input>
+            </div>
           </md-input-container>
+          <span v-if="errors.has('firstname')" class="help-block" id="error-msg">
+            <md-icon class="md-warn">warning</md-icon>
+            {{ errors.first('firstname') }}
+          </span>
 
-          <md-input-container class="md-input-invalid" md-clearable>
+          <md-input-container :class="{'md-input-invalid': errors.has('lastname')}" md-clearable>
             <md-icon>account_box</md-icon>
             <label>Last name</label>
-              <md-input placeholder="Enter your last name" required></md-input>
-              <span class="md-error">The name you entered is not valid</span>
+              <md-input :class="{ 'has-error': errors.has('lastname'), 'form-group': true }" placeholder="Enter your last name" type="text" v-validate data-vv-rules="required|alpha" v-model="form.lastname" class="form-control" name="lastname" required autofocus></md-input>
+            </div>
           </md-input-container>
+          <span v-if="errors.has('lastname')" class="help-block" id="error-msg">
+            <md-icon class="md-warn">warning</md-icon>
+            {{ errors.first('lastname') }}
+          </span>
 
-          <md-input-container class="md-input-invalid">
-          <md-icon>face</md-icon>
-          <label>Avatar</label>
-          <md-file v-model="onlyImages" accept="image/*" placeholder="Upload a picture to create an avatar"></md-file>
-          <span class="md-error">The image you uploaded is not valid</span>
+          <md-input-container :class="{'md-input-invalid': errors.has('image')}">
+            <md-icon>face</md-icon>
+            <label>Avatar</label>
+            <md-file :class="{ 'has-error': errors.has('avatar'), 'form-group': true }" placeholder="Upload a picture to create an avatar" v-validate data-vv-rules="'ext:[jpg,png,bmp,svg]'" v-model="form.avatar" class="form-control" name="avatar" type="file" autofocus accept="image/*"></md-file>
           </md-input-container>
+          <span v-if="errors.has('avatar')" class="help-block" id="error-msg">
+            <md-icon class="md-warn">warning</md-icon>
+            {{ errors.first('avatar') }}
+          </span>
 
-          <md-input-container class="md-input-invalid" md-clearable>
+          <md-input-container :class="{'md-input-invalid': errors.has('phone')}" md-clearable>
             <md-icon>phone</md-icon>
             <label>Phone</label>
-              <md-input placeholder="Enter your phone number" required></md-input>
-              <span class="md-error">The phone number you entered is not valid</span>
+              <md-input :class="{ 'has-error': errors.has('phone'), 'form-group': true }" placeholder="Enter your phone number" type="numeric" v-validate="{ required: true, regex: /^\d+(\.\d+)*$/ }" v-model="form.phone" class="form-control" name="phone" required autofocus></md-input>
+            </div>
           </md-input-container>
+          <span v-if="errors.has('phone')" class="help-block" id="error-msg">
+            <md-icon class="md-warn">warning</md-icon>
+            {{ errors.first('phone') }}
+          </span>
 
-          <md-input-container class="md-input-invalid" md-clearable>
+          <md-input-container :class="{'md-input-invalid': errors.has('email')}" md-clearable>
             <md-icon>email</md-icon>
             <label>Email</label>
-              <md-input placeholder="Enter your email address" required></md-input>
-              <span class="md-error">The email address you entered is not valid</span>
+              <md-input :class="{ 'has-error': errors.has('email'), 'form-group': true }" placeholder="Enter your email address" type="email" v-validate data-vv-rules="required|email" v-model="form.email" class="form-control" name="email" required autofocus></md-input>
+            </div>
           </md-input-container>
+          <span v-if="errors.has('email')" class="help-block" id="error-msg">
+            <md-icon class="md-warn">warning</md-icon>
+            {{ errors.first('email') }}
+          </span>
         </form>
-        <md-button href="#" class="md-button md-raised md-primary" id="new-id-btn">
-          Next
-          <md-icon>send</md-icon>
-        </md-button>
+        <div class="new-id-btn">
+          <md-button href="#" class="md-button md-raised md-primary">
+            Next
+            <md-icon>send</md-icon>
+          </md-button>
+        </div>
       </md-card-content>
     </md-card>
 
@@ -67,6 +89,13 @@ export default {
   name: 'Setup',
   data() {
     return {
+      form: {
+        firstname: null,
+        lastname: null,
+        avatar: null,
+        email: null,
+        phone: null,
+      },
     };
   },
 };
@@ -95,7 +124,12 @@ export default {
   width:30%;
   margin-top: 5%;
 }
-#new-id-btn {
-  margin-top: 5%;
+.new-id-btn {
+  margin-top: 15%;
+}
+#error-msg {
+  color: red;
+  margin: 0 auto;
+  float: left;
 }
 </style>
