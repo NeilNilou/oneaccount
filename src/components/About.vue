@@ -6,7 +6,7 @@
       <div class="navbar-btn">
         <router-link to='/'><md-button class="router-link-btn">access data</md-button></router-link>
         <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
-        <router-link to='/about'><md-button class="router-link-btn">about us</md-button></router-link>
+        <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
       </div>
     </md-toolbar>
     <md-card md-with-hover class="card-about">
@@ -15,12 +15,12 @@
       </md-card-media>
 
       <md-card-header>
-        <div class="md-title">About us</div>
+        <div class="md-title">About</div>
       </md-card-header>
 
       <md-card-content class="card-content">
-        One Account est un service qui redonne aux utilisateurs la possession de leurs données personnelles, amenant ainsi le concept d'une véritable identité numérique.
-        L'utilisateur détient donc un compte unique qu'il peut décider de lier aux sites qu'il utilise et aux réseaux sociaux auxquels il participe pour s'y connecter.
+      One Account is a service that enables users to regain possession of their personal data which embodies the concept of a numerical identity.</br>
+      The user holds one unique account which he can decide to link to other services or social networks that he uses in order to log in.
       </md-card-content>
     </md-card>
   </main>

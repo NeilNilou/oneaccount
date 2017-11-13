@@ -6,7 +6,7 @@
       <div class="navbar-btn">
         <router-link to='/'><md-button class="router-link-btn">access data</md-button></router-link>
         <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
-        <router-link to='/about'><md-button class="router-link-btn">about us</md-button></router-link>
+        <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
       </div>
     </md-toolbar>
       <img class="logo-homepage" src="../assets/logo-fond-blanc.png">
