@@ -1,10 +1,10 @@
 <template>
-  <main>
+  <div class="app">
     <md-toolbar class="md-medium">
       <router-link to='/'><img class="logo-navbar" src="../assets/logo-nav.png"></router-link>
 
       <div class="navbar-btn">
-        <router-link to='/'><md-button class="router-link-btn">access data</md-button></router-link>
+        <router-link to='/account'><md-button class="router-link-btn">access data</md-button></router-link>
         <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
         <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
       </div>
@@ -23,7 +23,7 @@
       The user holds one unique account which he can decide to link to other services or social networks that he uses in order to log in.
       </md-card-content>
     </md-card>
-  </main>
+  </div>
 </template>
 
 <script>

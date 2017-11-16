@@ -9,21 +9,12 @@
         <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
       </div>
     </md-toolbar>
-      <img class="logo-home" src="../assets/logo-fond-blanc.png">
-      <h1>Control and supervise your personal data on the web</h1>
-      <router-link to='/account'><md-button class="md-raised md-primary" id="access-btn">Connect to your data</md-button></router-link>
-      <div class="register">
-        <p class="not-register">New here ? Get started now</p>
-        <router-link to='/setup'><md-button class="md-icon-button md-raised md-primary" id="register-btn">
-          <md-icon>account_circle</md-icon>
-        </md-button></router-link>
-      </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Account',
   data() {
     return {
     };
@@ -47,20 +38,5 @@ export default {
 .router-link-btn {
   color: white;
   text-decoration: none;
-}
-#access-btn {
-  margin-top: 40px;
-  margin-bottom: 15px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  font-weight: bold;
-}
-.register {
-  margin-top: 10px;
-}
-.register-btn {
-  float: right;
-}
-.not-register {
-  display: inline-block;
 }
 </style>
