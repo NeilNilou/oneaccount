@@ -1,28 +1,30 @@
 <template>
-  <div class="app">
-    <md-toolbar class="md-medium">
-      <router-link to='/'><img class="logo-navbar" src="../assets/logo-nav.png"></router-link>
+  <div class="page-container">
+    <md-app>
+      <md-toolbar class="md-medium">
+        <router-link to='/'><img class="logo-navbar" src="../assets/logo-nav.png"></router-link>
 
-      <div class="navbar-btn">
-        <router-link to='/account'><md-button class="router-link-btn">access data</md-button></router-link>
-        <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
-        <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
-      </div>
-    </md-toolbar>
-    <md-card md-with-hover class="card-about">
-      <md-card-media class="card-logo">
-        <img src="../assets/logo-fond-blanc.png" alt="OneAccount">
-      </md-card-media>
+        <div class="navbar-btn">
+          <router-link to='/account'><md-button class="router-link-btn">access data</md-button></router-link>
+          <router-link to='/setup'><md-button class="router-link-btn">new setup</md-button></router-link>
+          <router-link to='/about'><md-button class="router-link-btn">about</md-button></router-link>
+        </div>
+      </md-toolbar>
+      <md-card md-with-hover class="card-about">
+        <md-card-media class="card-logo">
+          <img src="../assets/logo-fond-blanc.png" alt="OneAccount">
+        </md-card-media>
 
-      <md-card-header>
-        <div class="md-title">About</div>
-      </md-card-header>
+        <md-card-header>
+          <div class="md-title">About</div>
+        </md-card-header>
 
-      <md-card-content class="card-content">
-      One Account is a service that enables users to regain possession of their personal data which embodies the concept of a numerical identity.</br>
-      The user holds one unique account which he can decide to link to other services or social networks that he uses in order to log in.
-      </md-card-content>
-    </md-card>
+        <md-card-content class="card-content">
+        One Account is a service that enables users to regain possession of their personal data which embodies the concept of a numerical identity.</br>
+        The user holds one unique account which he can decide to link to other services or social networks that he uses in order to log in.
+        </md-card-content>
+      </md-card>
+    </md-app>
   </div>
 </template>
 
