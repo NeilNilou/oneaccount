@@ -26,9 +26,9 @@
         </div>
       </md-toolbar>
 
-      <div class="side-menu">
-        <div class="menu-title">
-          <md-button class="menu-title-btn">
+      <div class="side-full-menu" v-if="showFullMenu">
+        <div class="menu-max-title">
+          <md-button class="menu-max-title-btn" v-on:click="showFullMenu = !showFullMenu, showMinMenu = !showMinMenu">
             <md-icon>menu</md-icon>
             Menu
           </md-button>
@@ -44,6 +44,14 @@
           <div class="item-2">
             <md-button class="menu-item-btn" v-on:click="idCardShow = true, serviceShow = false">Personal data</md-button>
           </div>
+        </div>
+      </div>
+
+      <div class="side-min-menu" v-if="showMinMenu" ref="showMinMenu">
+        <div class="menu-min-title">
+          <md-button class="menu-min-title-btn" v-on:click="showFullMenu = !showFullMenu, showMinMenu = !showMinMenu">
+            <md-icon>menu</md-icon>
+          </md-button>
         </div>
       </div>
 
@@ -68,7 +76,11 @@ export default {
     return {
       idCardShow: false,
       serviceShow: false,
+      showFullMenu: true,
+      showMinMenu: false,
     };
+  },
+  methods: {
   },
 };
 </script>
@@ -90,27 +102,50 @@ export default {
     position: absolute;
     right: 0px;
 }
-.side-menu {
+.side-full-menu {
   position: absolute;
   left: 0px;
   width: 200px;
   height: calc(100% - 88px);
   text-align: left;
-  background-color: #006064;
+  background: #006064;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: block;
+  color: white;
 }
-.menu-title {
+.side-min-menu {
+  position: absolute;
+  left: 0px;
+  width: 100px;
+  height: calc(100% - 88px);
+  text-align: left;
+  background: #006064;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: hidden;
+  color: white;
+}
+.menu-max-title {
   color: white;
   width: 100%;
   height: 80px;
   left: 1px;
   text-align: left;
 }
-.menu-title-btn {
+.menu-min-title {
+  left: 1px;
+  text-align: left;
+}
+.menu-max-title-btn {
   margin-left: 0px;
-  width: 100%;
   height: 80px;
+  width: 100%;
   text-align:left;
+}
+.menu-min-title-btn {
+  margin-left: 0px;
+  height: 80px;
+  width: 100%;
+  text-align:center;
 }
 #navbar-top {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -120,6 +155,7 @@ export default {
 }
 .menu-item-btn {
   color: white;
+  width: auto;
   margin-left: 0px;
   width: 100%;
   text-align:left;
