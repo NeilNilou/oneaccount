@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <div class="side-min-menu" v-if="showMinMenu" ref="showMinMenu">
+      <div class="side-min-menu" v-if="showMinMenu">
         <div class="menu-min-title">
           <md-button class="menu-min-title-btn" v-on:click="showFullMenu = !showFullMenu, showMinMenu = !showMinMenu">
             <md-icon>menu</md-icon>
@@ -56,7 +56,7 @@
       </div>
 
       <idCard v-show='idCardShow' />
-      <service v-show='serviceShow' />
+      <service v-show='serviceShow' class="service" />
 
     </md-app>
   </div>
@@ -159,5 +159,9 @@ export default {
   margin-left: 0px;
   width: 100%;
   text-align:left;
+}
+.service {
+  float: right;
+  position: relative;
 }
 </style>
