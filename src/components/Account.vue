@@ -55,8 +55,10 @@
         </div>
       </div>
 
-      <idCard v-show='idCardShow' />
-      <service v-show='serviceShow' class="service" />
+      <div class="content-container">
+        <idCard v-show='idCardShow' />
+        <service v-show='serviceShow' class="service" />
+      </div>
 
     </md-app>
   </div>
@@ -163,5 +165,9 @@ export default {
 .service {
   float: right;
   position: relative;
+}
+.content-container {
+  margin-left: 200px;
+  margin-top: 20px;
 }
 </style>

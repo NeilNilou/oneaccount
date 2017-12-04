@@ -184,8 +184,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .master-container {
-  margin-top: 50px;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 .card-service {
   float: left;

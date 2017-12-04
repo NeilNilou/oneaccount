@@ -1,6 +1,7 @@
 <template>
   <div class="master-container">
-    <h1 id="section-title">Your personal data</h1>
+
+    <h1>Your personal data</h1>
 
     <md-card class="card-id-card">
         <md-card-header>
@@ -192,8 +193,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .master-container {
-  margin-left: 200px;
-  margin-top: 50px;
+  width: 100%;
+  height: 100%;
 }
 .card-id-card {
   margin: 0 auto;
