@@ -127,11 +127,11 @@ export default {
   name: 'IDCard',
   data() {
     return {
-      firstname: 'John',
-      lastname: 'Doe',
-      email: 'john.doe@mail.com',
-      phone: '0102030405',
-      address: '10 Downing St, Westminster, London SW1A 2AA, UK',
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      address: '',
     };
   },
   methods: {

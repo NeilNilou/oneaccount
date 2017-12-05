@@ -3,7 +3,7 @@
 
     <h1>Services you are linked to</h1>
 
-    <md-card class="card-service" md-with-hover>
+        <md-card class="card-service" md-with-hover>
       <md-card-media class="card-media">
           <img class="card-img" src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/thumb/amazon_logo_th.jpg" alt="Amazon">
       </md-card-media>
@@ -170,6 +170,7 @@
         </md-button>
       </md-card-actions>
     </md-card>
+
   </div>
 </template>
 
@@ -178,6 +179,8 @@ export default {
   name: 'Service',
   data: () => ({
   }),
+  methods: {
+  },
 };
 </script>
 

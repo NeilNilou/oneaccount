@@ -168,6 +168,7 @@ export default {
 }
 .content-container {
   margin-left: 200px;
+  margin-right: 10px;
   margin-top: 20px;
 }
 </style>
